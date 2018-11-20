@@ -1,0 +1,98 @@
+<ion-header text-center>
+
+  <ion-navbar>
+    <ion-title>Editando o perfil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content >
+    <ion-list>
+      <ion-item>
+        <div>
+            <div class="label_item">  
+              <span>Capa:</span>
+            </div>
+            <div class="imagem_item">
+                <img class="imagem" src="assets/imgs/profile/sem_imagem_capa.png">
+            </div>
+        </div>
+      </ion-item>
+      <ion-item>
+          <div class="label_item">  
+            <span>Perfil:</span>
+          </div>
+          <div class="imagem_item">
+              <img id="profile-image" src="assets/imgs/profile/sem_imagem_perfil.png">
+          </div>
+      </ion-item>
+      <ion-item margin>
+        <ion-label floating>Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="nome"></ion-input>
+      </ion-item>
+      <ion-item margin>
+        <ion-label floating>Sexo</ion-label>
+        <ion-select [(ngModel)]="sexo">
+          <ion-option value="F">Feminino</ion-option>
+          <ion-option value="M">Masculino</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item margin>
+        <ion-label floating>Data de Nascimento</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dataNascimento"></ion-datetime>
+      </ion-item>
+
+      <ion-item margin>
+        <ion-label floating>Celular</ion-label>
+        <ion-input type="tel" [(ngModel)]="celular" [brmasker]="{mask:'(00)00000-0000', len:14, phone:true}"></ion-input>        
+      </ion-item>
+
+      <ion-item margin text-center>
+        <button id="button_editar" ion-button round outline icon-start (click)="salvarDadosUsuario()">
+          <ion-icon name="checkmark"></ion-icon>
+          Salvar Alterações
+        </button>  
+      </ion-item>
+    </ion-list>
+
+    
+    
+    <ion-list>
+      <ion-title text-center>
+        <h6>Atividades</h6>
+      </ion-title>
+      <ion-item>
+        <div (click)="adicionarNovaAtividade()">
+            <div class="adicionar_nova_imagem" >  
+                <ion-icon name="add" color="secondary"></ion-icon>
+            </div>
+            <div class="adicionar_nova_descricao" text-left>
+              Adicionar nova atividade
+            </div>
+        </div>
+      </ion-item>
+
+      <ion-item *ngFor="let atividade of usuario_atividades">
+        <div (click)="editarAtividade(atividade.id, atividade.esporte_id)">
+            <div class="esporte_imagem">  
+              <ion-icon name="football" color="primary"></ion-icon>
+            </div>
+            <div class="esporte_nome" text-left>
+              {{atividade.nome}}
+            </div>
+            <div class="icone_editar">
+              <ion-icon name="cog" color="primary"></ion-icon>
+            </div>
+            <div class="esporte_caracteristicas" text-left>
+              {{atividade.caracteristicas}}
+            </div>
+        </div>
+      </ion-item>
+
+      <span *ngIf="nenhuma_atividade_cadastrada">
+        Nenhuma atividade cadastrada!
+      </span>
+
+    </ion-list>
+  </ion-content>

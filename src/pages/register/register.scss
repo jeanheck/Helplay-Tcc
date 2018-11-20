@@ -1,0 +1,22 @@
+page-register {
+    ion-navbar.toolbar * {
+        color: #488aff;
+    }
+
+    span {
+        color: #488aff;
+    }
+
+    #span_dados_do_perfil {
+        display: block;
+        margin-top: 5vh;
+    }
+    #span_dados_de_acesso {
+        display: block;
+        margin-top: 5vh;
+    }
+
+    #button_registrar{
+        margin-top: 5vh;
+    }
+}

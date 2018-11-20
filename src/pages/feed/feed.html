@@ -1,0 +1,83 @@
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <div (click)="adicionarNovoEvento()">
+          <div class="adicionar_nova_imagem" >  
+              <ion-icon name="add" color="secondary"></ion-icon>
+          </div>
+          <div class="adicionar_nova_descricao" text-left>
+            Adicionar novo evento
+          </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ion-card *ngFor="let evento of lista_eventos" margin-bottom>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/marty-avatar.png">
+      </ion-avatar>
+      <h2 style="width: 150px; float: left;">{{evento.descricao}}</h2>
+      <div style="float: right;" *ngIf="evento.editavel">
+        <ion-icon name="cog" color="primary" style="font-size: 30px;" (click)="editarEvento(evento.id);"></ion-icon>
+      </div>
+      <p style="width: 150px; float: left;">{{evento.usuario_nome}}</p>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <div padding>
+          <img class="evento_imagem" src="assets/imgs/ica-slidebox-img-4.png">
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <div class="evento_informacoes">
+      
+      <!--<ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>12 confirmados</div>
+          </button>
+        </ion-col>
+      </ion-row>-->
+  
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small color="dark">
+            <ion-icon name="calendar" color="primary"></ion-icon>
+            <div>{{evento.data | date:"dd/MM/yyyy"}}</div>
+          </button>
+          <button ion-button icon-start clear small color="dark">
+            <ion-icon name="clock" color="primary"></ion-icon>
+            <div>{{evento.hora | date:"HH:mm"}}</div>
+          </button>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small color="dark">
+            <ion-icon name="home" color="primary"></ion-icon>
+            <div>{{evento.local}}</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  
+    <button ion-button block (click)="abrirDetalhes(evento)">Detalhes</button>
+
+  </ion-card>
+
+  <ion-grid *ngIf="nenhum_evento">
+    <ion-row>
+      <ion-col id="nenhum_evento">
+        Você ainda não tem eventos!
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

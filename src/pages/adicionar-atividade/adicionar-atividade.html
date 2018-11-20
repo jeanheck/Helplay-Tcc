@@ -1,0 +1,44 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Selecione os esportes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div id="cabecalho">
+    <div id="texto">
+      Selecione os esportes que você pratica, e depois marque as caracteristicas com as quais você se 
+      identifica
+    </div>
+  </div>
+
+  <ion-grid id="esportes">
+    <ion-row class="esporte" *ngFor="let esporte of esportes">
+      <ion-col col-2 (click)="marcarEsporte(esporte.id)">
+        <ion-checkbox [(ngModel)]='esporte.checked' (click)="marcarEsporte(esporte.id)"></ion-checkbox>
+      </ion-col>
+      <ion-col (click)="marcarEsporte(esporte.id)">
+        <span id="esporte_descricao_{{esporte.id}}">{{esporte.nome}}</span>
+      </ion-col>
+      
+        <ion-grid id="caracteristicas_{{esporte.id}}" class="caracteristicas" style="display: none;">
+          <ion-row *ngFor="let caracteristica of esporte.caracteristicas" (click)="marcarCaracteristica(esporte.id, caracteristica.id)">
+            <ion-col col-2>
+              <ion-checkbox [(ngModel)]='caracteristica.checked' color="secondary"></ion-checkbox>
+            </ion-col>
+            <ion-col>
+              <span id="caracteristica_descricao_{{caracteristica.id}}">{{caracteristica.descricao}}</span>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      
+    </ion-row>
+  </ion-grid>
+
+  <div text-center>
+    <button id="button_registrar" ion-button round outline (click)="salvarEsportesECaracteristicas()">Salvar e continuar</button>
+  </div>
+</ion-content>

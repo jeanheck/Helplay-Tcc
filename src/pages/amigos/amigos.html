@@ -1,0 +1,38 @@
+
+<ion-content padding>
+    <!--<ion-searchbar (ionInput)="getItems($event)" placeholder="Digite um nome..."></ion-searchbar>-->
+
+    <!--<ion-list>
+        <ion-item *ngFor="let item of items">
+        {{ item }}
+        </ion-item>
+    </ion-list>-->
+
+    <ion-list>
+        <ion-item id="procureNovosUsuario" (click)="procurarNovosUsuarios()">
+            <h2>Procure novos usuários</h2>
+            <ion-icon name="search" color="primary"></ion-icon>
+        </ion-item>
+    </ion-list>
+
+    <ion-searchbar placeholder="Procure um amigo..."></ion-searchbar>
+
+    <ion-list>
+        <ion-item class="usuario" *ngFor="let amigo of amigos">
+        <ion-avatar item-start (click)="visualizarPerfil(amigo.usuario_id)">
+            <img src="assets/imgs/amigos/cachorro.jpg">
+        </ion-avatar>
+
+        <div (click)="visualizarPerfil(amigo.usuario_id)">
+        <h2>{{amigo.nome}} <span style="font-size: 10px">- {{amigo.celular}}</span></h2> 
+        <p>{{amigo.esportes}}</p>
+        </div>
+
+        <ion-icon name="trash" color="primary" (click)="excluirAmigo(amigo.amigo_id)"></ion-icon>
+        </ion-item>
+    </ion-list>
+
+    <span *ngIf="nenhum_amigo_adicionado">
+        Você ainda não adicionou ninguém como amigo!
+    </span>
+</ion-content>

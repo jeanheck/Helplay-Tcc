@@ -1,0 +1,51 @@
+<!--
+  Generated template for the AtividadePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Editando atividade</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-item class="esporte_descricao">
+      <span style="font-size: 25px;">{{esporte_nome}}</span>
+      <ion-icon name="trash" color="primary" (click)="excluirAtividade()"></ion-icon>
+    </ion-item>
+
+    <div class="inserir_caracteristica_manual">
+      <ion-item class="input_caracteristica_manual">
+        <ion-label stacked>Escreva uma característica</ion-label>
+        <ion-input type="text" [(ngModel)]="caracteristica_manual"></ion-input>
+      </ion-item>
+      <div class="icone_caracteristica_manual">
+        <ion-icon name="add" color="primary" style="font-size: 25px;" (click)="inserirCaracteristicaManual()"></ion-icon>
+      </div>
+    </div>
+
+    <ion-item>
+      <span id="marque_alguma_lista">Ou marque alguma na lista</span>
+    </ion-item>     
+
+  </ion-list>
+
+  <ion-grid>
+
+    <ion-row *ngFor="let caracteristica of esporte_caracteristicas">
+      <ion-col col-1></ion-col>
+      <ion-col col-9>
+        <span class="caracteristica_nome">{{caracteristica.descricao}}</span>
+      </ion-col>
+      <ion-col col-2>
+        <ion-checkbox *ngIf="caracteristica.mostrarOpcaoMarcar" color="primary" [(ngModel)]='caracteristica.checked' (click)="marcarDesmarcarCaracteristica(caracteristica.individualidade_id, caracteristica.checked, caracteristica.id)"></ion-checkbox>
+        <ion-icon *ngIf="caracteristica.mostrarOpcaoExcluir" name="trash" color="primary" (click)="excluirIndividualidade(caracteristica.id, caracteristica.individualidade_id)"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

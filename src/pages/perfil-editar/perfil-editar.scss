@@ -1,0 +1,204 @@
+page-perfil-editar {
+    ion-navbar.toolbar * {
+        color: #488aff;
+    }
+
+    #user-info {
+        margin-top: -90px;
+    }
+
+    #user-info * {
+        margin: 5px;
+        font-size: 12px;
+    }
+
+    #nota {
+        margin-bottom: 20px;
+        font-size: 10px;
+        color: #888;
+    }
+
+    .label_item{
+        width: 50px; 
+        height: 100px; 
+        float: left; 
+        padding: 0;
+        color: #888;
+        font-size: 14px;
+    }
+
+    .label_item span {
+        display: block;
+        margin-top: 40px;
+        width: 100%;
+        text-align: right;
+    }
+
+    .imagem_item{
+        width: 220px; 
+        height: 25px; 
+        float: right; 
+        padding-top: 5px;
+    }
+
+    .imagem_item .imagem {
+        box-shadow: 0px 0px 4px rgba(72,138,255,0.7);
+        border: 1px solid #488aff;
+        border-radius: 10px;
+        width: 215px;
+        height: 90px
+    }
+
+    .esporte_editar{
+        width: 50px; 
+        height: 50px;
+        padding: 0;
+        border: 1px solid black;
+    }
+    .esporte_editar ion-icon {
+        font-size: 50px;
+    }
+    
+    .esporte_imagem{
+        width: 50px; 
+        height: 50px; 
+        float: left; 
+        padding: 0;
+    }
+    .esporte_imagem ion-icon {
+        font-size: 50px;
+    }
+    .esporte_nome{
+        width: 160px; 
+        height: 25px; 
+        float: left; 
+        padding-top: 5px;
+        margin-left: 5px;
+    }
+    .esporte_caracteristicas{
+        width: 160px; 
+        height: 25px; 
+        float: left; 
+        font-size: 12px; 
+        color: gray; 
+        padding-top: 5px;
+        margin-left: 5px;
+    }
+
+    .icone_editar{
+        float: right;
+        width: 30px; 
+        height: 30px;
+    }
+    .icone_editar ion-icon {
+        margin-top: 10px;
+        font-size: 30px;
+    }
+
+
+    .adicionar_nova_imagem{
+        width: 50px; 
+        height: 50px; 
+        float: left; 
+        padding: 0;
+        
+    }
+    .adicionar_nova_imagem ion-icon {
+        font-size: 60px;
+    }
+    .adicionar_nova_descricao{
+        width: 160px; 
+        height: 50px; 
+        float: left; 
+        padding-top: 20px;
+        margin-left: 5px;
+    }
+
+
+    #profile-bg {
+        position: fixed;
+        left: 0;
+        //top: 44px;
+        width: 100%;
+        height: 150px;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 20%;
+
+        text-align: center;
+        }
+
+        #content {
+        position: relative;
+        margin-top: 150px;
+        background-color: white;
+        /*box-shadow: 0px -1px 10px rgba(0,0,0,0.4);*/
+        padding-top: 200px;
+        }
+
+        #profile-info {
+        position: absolute;
+        top: -95px;
+        width: 100%;
+        z-index: 2;
+        text-align: center;
+        }
+        #profile-name {
+        color: #444;
+        font-size: 26px;
+        }
+        .profile-description {
+        font-size: 15px;
+        color: #888;
+        display: block;
+        }
+        .profile-description a {
+        color: #888;
+        }
+
+        #profile-image {
+        display: block;
+        border-radius: 100px;
+        border: 1px solid #488aff;
+        width: 90px;
+        height: 90px;
+        margin: 0px auto 0;
+        box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+        }
+
+        .list-item-content {
+        padding: 5px;
+        }
+
+        .list-item {
+        color: #666666;
+        }
+
+        .post {
+        color: #444;
+        }
+
+        .post-time {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: 11px;
+        color: #888;
+        }
+
+        .post-profile-image {
+        display: inline-block;
+        vertical-align: top;
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+        }
+        .post-options {
+        position: absolute;
+        font-size: 16px;
+        right: 5px;
+        bottom: 5px;
+        color: #888;
+    }
+}

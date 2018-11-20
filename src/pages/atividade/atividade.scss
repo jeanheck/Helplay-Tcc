@@ -1,0 +1,42 @@
+page-atividade {
+    ion-navbar.toolbar * {
+        color: #488aff;
+    }
+
+    .esporte_descricao ion-icon{
+        display: block;
+        float: right;
+        font-size: 25px;
+    }
+
+    .inserir_caracteristica_manual{
+        height: 66px;
+    }
+    .input_caracteristica_manual{
+        width: 80%; 
+        float: left;
+    }
+    .icone_caracteristica_manual{
+        width: 15%; 
+        float: right; 
+        height: 100%;
+    }
+
+    .icone_caracteristica_manual ion-icon{
+        margin-top: 35px;
+        margin-left: 10px;
+    }
+
+    #marque_alguma_lista{
+        color: #999;
+        font-size: 12px
+    }
+    
+    .caracteristica_nome{
+        float: left;
+        font-size: 15px;
+    }
+    .caracteristica_opcoes{
+        float: right;
+    }
+}

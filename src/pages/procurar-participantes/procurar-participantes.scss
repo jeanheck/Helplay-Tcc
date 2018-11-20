@@ -1,0 +1,21 @@
+page-procurar-participantes {
+    #procureNovosUsuario {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+    #procureNovosUsuario ion-icon {
+        float: right;
+    }
+    #procureNovosUsuario h2 {
+        float: left;
+    }
+
+    .usuario ion-icon {
+        font-size: 25px;
+        float: right;
+    }
+
+    .usuario div{
+        float: left;
+    }
+}

@@ -1,0 +1,95 @@
+<ion-header text-center>
+  <ion-navbar>
+      <ion-title>Editar Evento</ion-title>
+  </ion-navbar>
+</ion-header>
+  
+<ion-content text-center>
+  <ion-list>
+    <ion-item>
+      <div>
+          <div class="label_item">  
+            <span>Capa</span>
+          </div>
+          <div class="imagem_item">
+              <img class="imagem" src="assets/imgs/profile/sem_imagem_capa.png">
+          </div>
+      </div>
+    </ion-item>
+    <ion-item>
+        <div class="label_item">  
+          <span>Imagem</span>
+        </div>
+        <div class="imagem_item">
+            <img id="profile-image" src="assets/imgs/profile/esporte.jpg">
+        </div>
+    </ion-item>
+      
+    <ion-item>
+      <ion-label floating>Nome do evento</ion-label>
+      <ion-input type="text" [(ngModel)]="nome_evento"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Data</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Hora</ion-label>
+      <ion-datetime displayFormat="HH:mm" [(ngModel)]="hora"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Local do evento</ion-label>
+      <ion-input type="text" [(ngModel)]="local_evento"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Informações</ion-label>
+      <ion-textarea rows="5" [(ngModel)]="informacoes"></ion-textarea>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-grid>
+    <ion-row (click)="procurarParticipantes()">
+      <ion-col class="campo_add_participante">
+        <ion-list>
+          <ion-item (click)="procurarParticipantes()">
+            <ion-label floating>Procure um participante</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+
+      <ion-col class="botao_add_participante" col-2>
+        <ion-icon name="add" color="secondary"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-item class="usuario" *ngFor="let participante of participantes">
+      <ion-avatar item-start (click)="visualizarPerfil(participante.usuario_id)">
+          <img src="assets/imgs/amigos/cachorro.jpg">
+      </ion-avatar>
+
+      <div (click)="visualizarPerfil(participante.usuario_id)">
+        <h2>{{participante.nome}} <span style="font-size: 10px">- {{participante.celular}}</span></h2> 
+        <p style="text-align: left;">{{participante.esportes}}</p>
+      </div>
+
+      <ion-icon name="trash" color="primary" (click)="excluirParticipante(participante.participante_id)"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <span *ngIf="nenhum_participante">
+    Ainda não existe nenhum participante para esse evento!
+  </span>
+
+  <p>
+      <button id="button_salvar" ion-button round outline icon-start (click)="salvarEdicao()">
+        <ion-icon name="cog"></ion-icon>
+        Salvar
+      </button>
+  </p>
+  
+</ion-content>
+  

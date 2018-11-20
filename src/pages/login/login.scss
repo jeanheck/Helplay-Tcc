@@ -1,0 +1,22 @@
+page-login {
+    ion-title * {
+        margin-top: 20vh;
+    }
+    ion-title .toolbar-title-md{
+        color: #488aff;
+    }
+
+    #button_novo_usuario {
+        margin-top: 5vh;
+        display: block;
+    }
+    #button_novo_usuario:hover {
+        cursor: pointer;
+    }
+
+    #login_erro{
+        display: block; 
+        margin-top: 15px; 
+        color: red;
+    }
+}

@@ -1,0 +1,30 @@
+<ion-header text-center>
+
+  <ion-navbar>
+    <ion-title>Adicionando participante</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar placeholder="Procure um amigo..."></ion-searchbar>
+
+  <ion-list>
+    <ion-item class="usuario" *ngFor="let amigo of amigos">
+    <ion-avatar item-start (click)="visualizarPerfil(amigo.usuario_id)">
+        <img src="assets/imgs/amigos/cachorro.jpg">
+    </ion-avatar>
+
+    <div (click)="visualizarPerfil(amigo.usuario_id)">
+    <h2>{{amigo.nome}} <span style="font-size: 10px">- {{amigo.celular}}</span></h2> 
+    <p>{{amigo.esportes}}</p>
+    </div>
+
+    <ion-icon name="add" color="primary" (click)="adicionarAoEvento(amigo.usuario_id)"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <span *ngIf="nenhum_amigo_para_adicionar">
+    Você não tem mais nenhum amigo para convidar para esse evento!
+  </span>
+</ion-content>

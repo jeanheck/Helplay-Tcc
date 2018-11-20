@@ -1,0 +1,52 @@
+<ion-header text-center>
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center>
+    <div id="profile-bg" [ngStyle]="{'background-image': 'url(' + imageUrl +')'}"></div>
+    <div id="content">
+      <div id="profile-info">
+        <img id="profile-image" src="assets/imgs/profile/sem_imagem_perfil.png">
+        <h3 id="profile-name"><span id="usuario_nome"></span></h3>
+      </div>
+  
+      <div id="user-info" text-center>
+          <span class="profile-description">
+            <ion-icon name="man"></ion-icon> <span id="usuario_sexo"></span>
+            <ion-icon name="egg"></ion-icon> <span id="usuario_dataNascimento"></span>
+            <ion-icon name="call"></ion-icon> <span id="usuario_celular"></span>
+          </span>
+      </div>
+  
+      <ion-list>
+        <ion-title>
+          <h6>Atividades</h6>
+        </ion-title>
+  
+        <ion-item *ngFor="let atividade of usuario_atividades">
+          <div>
+              <div class="esporte_imagem">  
+                <ion-icon name="bicycle" color="primary"></ion-icon>
+              </div>
+              <div class="esporte_nome" text-left>
+                {{atividade.nome}}
+              </div>
+              <div class="esporte_excluir">
+
+              </div>
+              <div class="esporte_caracteristicas" text-left>
+                {{atividade.caracteristicas}}
+              </div>
+          </div>
+        </ion-item>
+  
+        <span *ngIf="nenhuma_atividade_cadastrada">
+          Nenhuma atividade cadastrada!
+        </span>
+       
+      </ion-list>
+  
+    </div>
+  </ion-content>

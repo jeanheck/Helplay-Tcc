@@ -1,0 +1,57 @@
+
+<ion-header text-center>
+
+  <ion-navbar>
+    <ion-title>Criando sua conta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding text-center>
+    <ion-list>
+      <span id="span_dados_do_perfil">Dados do perfil</span>
+
+      <ion-item>
+        <ion-label floating>Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="nome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Sexo</ion-label>
+        <ion-select [(ngModel)]="sexo">
+          <ion-option value="F">Feminino</ion-option>
+          <ion-option value="M">Masculino</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Data de Nascimento</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data_nascimento"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Celular</ion-label>
+        <ion-input type="tel" [(ngModel)]="celular" [brmasker]="{mask:'(00)00000-0000', len:14, phone:true}"></ion-input>        
+      </ion-item>
+
+      <span id="span_dados_de_acesso">Dados de acesso</span>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Repita a senha</ion-label>
+        <ion-input type="password" [(ngModel)]="password_confirmation"></ion-input>
+      </ion-item>
+
+      <button id="button_registrar" ion-button round outline (click)="registrar()">Registrar</button>
+    
+    </ion-list>
+</ion-content>

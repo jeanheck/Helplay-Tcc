@@ -1,0 +1,24 @@
+<ion-content padding text-center>
+  <ion-title>HELPLAY</ion-title>
+  
+  <ion-list >
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Senha</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-item text-center>
+      <p id="login_erro">
+        
+      </p>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button round outline (click)="entrar()">Entrar</button>
+  <a button id="button_novo_usuario"  (click)="goNovoUsuario()">Novo usuário? Toque aqui!</a>
+</ion-content>

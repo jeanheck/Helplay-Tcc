@@ -1,0 +1,23 @@
+page-adicionar-atividade {
+    ion-navbar.toolbar * {
+        color: #488aff;
+    }
+
+    #cabecalho{
+        white-space: nowrap;
+    }
+    #cabecalho #texto {
+        display: inline-block; vertical-align: top; white-space: normal;
+    }
+
+    #esportes{
+        margin: 20px; width: 90%;
+    }
+    .esporte{
+        margin-bottom: 10px;
+    }
+
+    .caracteristicas{
+        margin-left: 10px;
+    }
+}
