@@ -70,7 +70,7 @@ export class PerfilPage {
         document.getElementById("usuario_dataNascimento").innerHTML = data.body.dataNascimento_br;
         document.getElementById("usuario_celular").innerHTML = data.body.celular;
 
-        if(data.body.sexo = "F"){
+        if(data.body.sexo == "F"){
           document.getElementById("usuario_sexo").innerHTML = "Feminino";
         }else{
           document.getElementById("usuario_sexo").innerHTML = "Masculino";

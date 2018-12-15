@@ -10,7 +10,7 @@ export class AuthorizationProvider {
 
   //public basepath = "http://192.168.15.6:3000/";
   //public basepath = "http://10.197.35.127:3000/";
-public basepath = "http://localhost:3000/";
+public basepath = "http://192.168.15.8:3000/";
   
   public basic_header(){
     return {
